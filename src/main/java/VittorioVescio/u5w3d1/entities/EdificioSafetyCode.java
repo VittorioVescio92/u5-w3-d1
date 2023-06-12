@@ -22,8 +22,8 @@ public class EdificioSafetyCode implements AttributeConverter<String, String> {
 	private String algorithm;
 	private String secret;
 
-	public EdificioSafetyCode(@Value("${application.safetyAlghoritm}") String algorithm,
-			@Value("${application.secret}") String secret) {
+	public EdificioSafetyCode(@Value("${spring.application.jwt.safetyAlgorithm}") String algorithm,
+			@Value("${spring.application.jwt.edificioSecret}") String secret) {
 		this.algorithm = algorithm;
 		this.secret = secret;
 	}
