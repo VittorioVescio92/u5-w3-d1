@@ -1,5 +1,6 @@
 package VittorioVescio.u5w3d1.services;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,10 @@ import VittorioVescio.u5w3d1.repositories.UsersRepository;
 public class UsersService {
 	@Autowired
 	UsersRepository usersRepo;
+
+	public List<User> findAll() {
+		return usersRepo.findAll();
+	}
 
 	public User findById(UUID id) throws NotFoundException {
 		return usersRepo.findById(id).orElseThrow(() -> new NotFoundException("Utente non trovato!"));

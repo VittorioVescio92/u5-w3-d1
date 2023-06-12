@@ -11,4 +11,6 @@ import VittorioVescio.u5w3d1.entities.User;
 @Repository
 public interface UsersRepository extends JpaRepository<User, UUID> {
 	Optional<User> findByEmail(String email);
+
+	Optional<User> findByUsername(String username);
 }
